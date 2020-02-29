@@ -1,8 +1,54 @@
 import Vue from 'vue'
 import App from './App.vue'
+import dash from './components/dash';
+import login from './components/login';
+import VueRouter from 'vue-router';
+Vue.config.productionTip = false;
+Vue.use(VueRouter);
 
-Vue.config.productionTip = false
+const routes = [
+  { 
+    path: '/',
+    beforeEnter: (to, from, next) => {
+      console.log(localStorage.getItem('isAuthenticated'))
+      if (localStorage.getItem('isAuthenticated') === 'true') {
+        next('/dash');
+      } else {
+        next('/login');
+      }
+    }
+  },
+  {
+    path:'/dash', 
+    component: dash,
+    beforeEnter: (to, from, next) => {
+      console.log(localStorage.getItem('isAuthenticated'))
+      if (localStorage.getItem('isAuthenticated') === 'true') {
+        next();
+      } else {
+        next(false);
+      }
+    }
+  },
+  {
+    path:'/login', 
+    component: login,
+    beforeEnter: (to, from, next) => {
+      console.log(localStorage.getItem('isAuthenticated'))
+      if (localStorage.getItem('isAuthenticated') === 'true') {
+        next('/dash');
+      } else {
+        next();
+      }
+    }
+  }
+]
+
+const router = new VueRouter({
+  routes
+})
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')
