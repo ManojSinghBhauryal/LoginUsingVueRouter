@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="cards">
-                    
+                    <router-view></router-view>
                 </div>
             </div>
         </div>
@@ -59,7 +59,8 @@ methods:{
 }
 .navBar{
     box-shadow: 1px -2px 4px 0px rgba(68, 92, 74, 0.3);
-    width:13.5%;
+    /* width:13.5%; */
+    width:170px;
     z-index:20;
 }
 .findButton{
@@ -121,9 +122,10 @@ methods:{
     background-color: #C4E7DB;
 }
 .navBar2{
-    width:18%;
+    /* width:18%; */
+    width:250px;
     background-color:#E4F5EF;
-    height: 680px;
+    height:680px;
 }
 
 .search{

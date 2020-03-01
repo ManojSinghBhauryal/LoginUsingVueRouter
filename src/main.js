@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import dash from './components/dash';
 import login from './components/login';
+import card1 from './components/card1';
+
 import VueRouter from 'vue-router';
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -41,6 +43,10 @@ const routes = [
         next();
       }
     }
+  },
+  {
+  path:'/dash/serve',
+  component:card1
   }
 ]
 
