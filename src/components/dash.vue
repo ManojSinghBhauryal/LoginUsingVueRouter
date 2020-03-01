@@ -65,7 +65,7 @@ methods:{
 }
 .findButton{
     text-align: center;
-    margin:10px 10px 10px 18px;
+    margin:10px;
     border:none;
     background-color: #EBF8F3;
     text-align: center;
