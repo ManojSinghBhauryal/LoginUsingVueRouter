@@ -45,7 +45,7 @@ methods:{
         this.$router.push('/login');
         console.log(localStorage.getItem('isAuthenticated'));
         }
-}
+    }
 }
 </script>
 
@@ -123,6 +123,7 @@ methods:{
 .navBar2{
     width:18%;
     background-color:#E4F5EF;
+    height: 680px;
 }
 
 .search{
@@ -144,9 +145,11 @@ methods:{
   width: 100%;
   display: block;
   
+  
 }
 .navList2{
     overflow:hidden;
+    
 
 }
 .navList2 .button2:hover{
