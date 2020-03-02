@@ -13,31 +13,34 @@
         <div class="tasks"> 
             <div class="projectTasks">
                 <button class="logout" v-on:click="handleLogout">Logout</button>
-                <pre> Project tasks</pre>
+             Project tasks
             </div>
             <div class="belowTask">
                 <div class="navBar2">
                     <input class="search" />
                     <div class="navList2">
-                        <button class="button2">serve<br>Running</button>
-                        <button class="button2">build<br>Compiles and minfies</button>
-                        <button class="button2">lint<br>Lint and fix files</button>
-                        <button class="button2">inspect<br>Inspect the revolved web...</button>
+                        <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">serve<br><span class="nav2text">Running</span></button></router-link>
+                        <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">build<br><span class="nav2text">Compiles and minfies</span></button></router-link>
+                        <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">lint<br><span class="nav2text">Lint and fix files</span></button></router-link>
+                        <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">inspect<br><span class="nav2text">Inspect the revolved web...</span></button></router-link>
                     </div>
                 </div>
-                <div class="cards">
-                    <router-view></router-view>
+                <div class="cards"> 
+                  <router-view></router-view>
                 </div>
             </div>
         </div>
         <div class="fixedBar">
-
+            
         </div>
+    
     </div>
 </template>
 
 <script>
+
 export default{
+
 methods:{
     handleLogout:function(){  
         console.log(localStorage.getItem('isAuthenticated'));
@@ -51,7 +54,7 @@ methods:{
 
 <style scoped>
 .main{
-    height:100%;
+    height:930px;
     width:100%;    
     display: flex;
     background-color: white;
@@ -60,8 +63,10 @@ methods:{
 .navBar{
     box-shadow: 1px -2px 4px 0px rgba(68, 92, 74, 0.3);
     /* width:13.5%; */
-    width:170px;
+    width:250px;
     z-index:20;
+    height: 100%;
+    
 }
 .findButton{
     text-align: center;
@@ -84,13 +89,14 @@ methods:{
     cursor: pointer;
     width: 100%;
     display: block;
+    outline: none;
 }
 .navList .button:hover{
     background-color: #D7F1E6;
 }
 
 .tasks{
-    height:100%;
+    height:93%;
     width:100%;
     z-index:5;
 }
@@ -111,6 +117,7 @@ methods:{
     font-size:15px;
     padding:10px;
     border:none;
+    cursor: pointer;
 }
 .logout:hover{
     background-color: #BBE6D6;
@@ -120,20 +127,23 @@ methods:{
     height:100%;
     width:100%;
     background-color: #C4E7DB;
+    display: flex;
 }
 .navBar2{
     /* width:18%; */
-    width:250px;
+    width:330px;
     background-color:#E4F5EF;
-    height:680px;
+    /* height:90%; */
 }
 
 .search{
-    width:75%;
+    width:210px;
     border-radius:25px;
     margin:10px;
     border:none;
     height:30px;
+    outline: none;
+    padding-left:10px;
 }
 .navList2 .button2{
   background-color:#E4F5EF;
@@ -146,13 +156,15 @@ methods:{
   cursor: pointer;
   width: 100%;
   display: block;
-  
-  
+  outline: none;
 }
 .navList2{
     overflow:hidden;
     
 
+}
+.nav2text{
+    color:grey;
 }
 .navList2 .button2:hover{
     background-color: #D7F1E6;
@@ -160,6 +172,7 @@ methods:{
 .cards{
     height:100%;
     width:100%;
+    
 }
 .fixedBar{
     background-color:#2c3e50;

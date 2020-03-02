@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <dash /> -->
     <!-- <login /> -->
-    <router-view></router-view>
+    <router-view></router-view> 
   </div>
 </template>
 
