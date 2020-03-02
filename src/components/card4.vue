@@ -38,7 +38,7 @@ export default {
 .card1{
     height:70px;
     width:98.5%;
-    background-color: black;
+    background-color: white;
     /* margin:10px; */
     border-radius: 15px; 
     display: flex;
@@ -87,7 +87,7 @@ export default {
 }
 .subCard42{
     height:auto;
-    background-color: white;
+    background-color: black;
     flex-grow:1;
     border-radius: 20px;
 }

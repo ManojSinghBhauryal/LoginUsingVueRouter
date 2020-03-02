@@ -1,10 +1,10 @@
 <template>
     <div class="outerCard">
         <div class="text">
-            Serve
+            lint
         </div>
         <div class="card1">
-            Dashboard
+            Dashboard 
         </div> <br>
         <div class="card2">
             <div class="subCard21"></div>
@@ -38,7 +38,7 @@ export default {
 .card1{
     height:70px;
     width:98.5%;
-    background-color: black;
+    background-color: white;
     /* margin:10px; */
     border-radius: 15px; 
     display: flex;
@@ -68,7 +68,7 @@ export default {
 .card3{
     height:120px;
     width:100%;
-    background-color: white;
+    background-color: black;
     /* margin:10px; */
     border-radius: 15px;    
 } 

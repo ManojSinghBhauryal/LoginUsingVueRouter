@@ -20,9 +20,9 @@
                     <input class="search" />
                     <div class="navList2">
                         <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">serve<br><span class="nav2text">Running</span></button></router-link>
-                        <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">build<br><span class="nav2text">Compiles and minfies</span></button></router-link>
-                        <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">lint<br><span class="nav2text">Lint and fix files</span></button></router-link>
-                        <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">inspect<br><span class="nav2text">Inspect the revolved web...</span></button></router-link>
+                        <router-link to="/dash/card2" style="text-decoration:none;"><button class="button2">build<br><span class="nav2text">Compiles and minfies</span></button></router-link>
+                        <router-link to="/dash/card3" style="text-decoration:none;"><button class="button2">lint<br><span class="nav2text">Lint and fix files</span></button></router-link>
+                        <router-link to="/dash/card4" style="text-decoration:none;"><button class="button2">inspect<br><span class="nav2text">Inspect the revolved web...</span></button></router-link>
                     </div>
                 </div>
                 <div class="cards"> 
