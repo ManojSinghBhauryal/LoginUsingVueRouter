@@ -37,14 +37,13 @@ export default {
 }
 .card1{
     height:70px;
-    width:98.5%;
+    width:100%;
     background-color: white;
     /* margin:10px; */
     border-radius: 15px; 
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left:20px;   
 } 
 .card2{
     height:250px;
@@ -57,7 +56,7 @@ export default {
     background-color: white;
     flex-grow: 2;
     border-radius: 20px;
-    margin-right:10px;
+    margin-right:20px;
 }
 .subCard22{
     height:auto;
@@ -83,7 +82,7 @@ export default {
     background-color: white;
     flex-grow: 2;
     border-radius: 20px;
-    margin-right:10px;
+    margin-right:20px;
 }
 .subCard42{
     height:auto;

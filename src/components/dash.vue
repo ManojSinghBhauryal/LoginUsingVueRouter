@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-            <div class="navBar">
+            <div v-bind:class="[!toggle ? 'sideNavBar':'navBar']">
                 <button class="findButton">dashboard </button>
                 <div class="navList">
                     <button class="button">Dashboard</button>
@@ -9,10 +9,11 @@
                     <button class="button">Configuration</button>
                     <button class="button">Tasks</button>
                 </div>
-            </div>
+             </div>
         <div class="tasks"> 
             <div class="projectTasks">
                 <button class="logout" v-on:click="handleLogout">Logout</button>
+                <button class="icon" v-on:click="toggle = !toggle">&#9776;</button>
              Project tasks
             </div>
             <div class="belowTask">
@@ -40,7 +41,11 @@
 <script>
 
 export default{
-
+  data(){
+      return{
+        toggle: false
+      }
+  },
 methods:{
     handleLogout:function(){  
         console.log(localStorage.getItem('isAuthenticated'));
@@ -52,22 +57,27 @@ methods:{
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .main{
-    height:930px;
+    height:800px;
     width:100%;    
     display: flex;
     background-color: white;
-    
+    overflow:hidden;
 }
 .navBar{
     box-shadow: 1px -2px 4px 0px rgba(68, 92, 74, 0.3);
-    /* width:13.5%; */
     width:250px;
     z-index:20;
     height: 100%;
     
+}.sideNavBar{
+    box-shadow: 1px -2px 4px 0px rgba(68, 92, 74, 0.3);
+    width:250px;
+    z-index:20;
+    height: 100%;
 }
+
 .findButton{
     text-align: center;
     margin:10px;
@@ -91,6 +101,7 @@ methods:{
     display: block;
     outline: none;
 }
+
 .navList .button:hover{
     background-color: #D7F1E6;
 }
@@ -185,5 +196,23 @@ methods:{
     z-index:20;
     
 }
-
+.icon{
+    display: none;
+}
+@media only screen and (max-width: 720px){
+    .main{
+        height:100%;
+    }
+    .navBar{
+        width:120px;
+        cursor:pointer;
+        display: none;
+    }
+    .button{
+        display:none;
+    }
+    .icon{
+        display:block;
+    }
+}
 </style>
