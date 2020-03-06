@@ -1,6 +1,6 @@
 <template>
+<transition name="slide">
     <div class="main">
-        <transition name="slide">
             <div v-bind:class="[!toggle ? 'sideNavBar':'navBar']">
                 <button class="findButton">dashboard </button>
                 <div class="navList">
@@ -11,7 +11,6 @@
                     <button class="button">Tasks</button>
                 </div>
             </div>
-        </transition>
         <div class="tasks"> 
             <div class="projectTasks">
                 <button class="logout" v-on:click="handleLogout">Logout</button>
@@ -38,6 +37,8 @@
         </div>
     
     </div>
+</transition>
+
 </template>
 
 <script>
@@ -254,6 +255,15 @@ methods:{
     }
     .belowTask{
         flex-direction: column;
+    }
+    .slide-enter-active, .slide-leave-active
+    {
+        transition: transform 0.2s ease;
+    }
+
+    .slide-enter, .slide-leave-to 
+    {
+        transform: all;
     }
    
 }
