@@ -249,6 +249,7 @@ methods:{
     .navList2{
         display:flex;
         width: 100%;
+        // padding-left: 15px;
     }
     .nav2text{
         display: none;
