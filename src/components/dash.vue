@@ -1,5 +1,6 @@
 <template>
     <div class="main">
+        <transition name="bounce">
             <div v-bind:class="[!toggle ? 'sideNavBar':'navBar']">
                 <button class="findButton">dashboard </button>
                 <div class="navList">
@@ -10,6 +11,7 @@
                     <button class="button">Tasks</button>
                 </div>
              </div>
+        </transition>
         <div class="tasks"> 
             <div class="projectTasks">
                 <button class="logout" v-on:click="handleLogout">Logout</button>
@@ -71,13 +73,16 @@ methods:{
     z-index:20;
     height: 100%;
     
-}.sideNavBar{
+}
+.sideNavBar{
     box-shadow: 1px -2px 4px 0px rgba(68, 92, 74, 0.3);
     width:250px;
     z-index:20;
-    height: 100%;
+    height: auto;
 }
-
+.bounce-enter-active, .bounce-leave-active{
+    transition: all .5s;
+}
 .findButton{
     text-align: center;
     margin:10px;
@@ -97,13 +102,15 @@ methods:{
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    width: 100%;
+    width: 200px;
     display: block;
     outline: none;
 }
 
 .navList .button:hover{
     background-color: #D7F1E6;
+        border:none;
+
 }
 
 .tasks{
@@ -112,6 +119,7 @@ methods:{
     z-index:5;
 }
 .projectTasks{
+    
     height:65px;
     width:100%;
     background-color: #BBE6D6;
@@ -141,10 +149,10 @@ methods:{
     display: flex;
 }
 .navBar2{
-    /* width:18%; */
     width:330px;
     background-color:#E4F5EF;
-    /* height:90%; */
+    border:none;
+
 }
 
 .search{
@@ -158,7 +166,6 @@ methods:{
 }
 .navList2 .button2{
   background-color:#E4F5EF;
-  border:none;
   color: black;
   padding:22px;
   text-align: left;
@@ -166,14 +173,11 @@ methods:{
   font-size: 16px;
   cursor: pointer;
   width: 100%;
-  display: block;
   outline: none;
-}
-.navList2{
-    overflow:hidden;
-    
+  border:none;
 
 }
+
 .nav2text{
     color:grey;
 }
@@ -204,15 +208,47 @@ methods:{
         height:100%;
     }
     .navBar{
-        width:120px;
+        width:0;
+        overflow: hidden;
         cursor:pointer;
-        display: none;
+        // display: none;
     }
+    
+    .findButton{
+        width:200px;
+    }
+    .navList{
+        width:300px;
+    }
+    
     .button{
         display:none;
     }
     .icon{
         display:block;
+        margin:5px;
     }
+    .logout{
+        padding:4px;
+        display: block;
+    }
+    .search{
+        display: none;
+    }
+       
+    .navBar2{
+        width:100%;
+    }
+    .navList2{
+        display:flex;
+        width: 100%;
+    }
+    .nav2text{
+        display: none;
+    }
+    .belowTask{
+        flex-direction: column;
+    }
+   
 }
 </style>
