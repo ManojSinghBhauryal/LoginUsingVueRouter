@@ -36,10 +36,10 @@ export default {
     font-size: 30px;
 }
 .card1{
-    height:70px;
-    width:100%;
+    height:50px;
+    width:auto;
     background-color: black;
-    /* margin:10px; */
+    padding:10px;
     border-radius: 15px; 
     display: flex;
     justify-content: flex-start;

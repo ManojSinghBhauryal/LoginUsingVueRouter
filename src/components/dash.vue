@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <transition name="bounce">
+        <transition name="slide">
             <div v-bind:class="[!toggle ? 'sideNavBar':'navBar']">
                 <button class="findButton">dashboard </button>
                 <div class="navList">
@@ -10,7 +10,7 @@
                     <button class="button">Configuration</button>
                     <button class="button">Tasks</button>
                 </div>
-             </div>
+            </div>
         </transition>
         <div class="tasks"> 
             <div class="projectTasks">
@@ -80,9 +80,15 @@ methods:{
     z-index:20;
     height: auto;
 }
-.bounce-enter-active, .bounce-leave-active{
-    transition: all .5s;
-}
+.slide-enter-active, .slide-leave-active
+    {
+        transition: transform 0.2s ease;
+    }
+
+.slide-enter, .slide-leave-to 
+    {
+        transform: all;
+    }
 .findButton{
     text-align: center;
     margin:10px;
@@ -102,7 +108,7 @@ methods:{
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    width: 200px;
+    width: inherit;
     display: block;
     outline: none;
 }
@@ -215,10 +221,10 @@ methods:{
     }
     
     .findButton{
-        width:200px;
+        width:230px;
     }
     .navList{
-        width:300px;
+        width:inherit;
     }
     
     .button{
