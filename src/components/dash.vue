@@ -73,13 +73,17 @@ methods:{
     width:250px;
     z-index:20;
     height: 100%;
+    transition: all .1s;
+
     
 }
 .sideNavBar{
     box-shadow: 1px -2px 4px 0px rgba(68, 92, 74, 0.3);
     width:250px;
     z-index:20;
-    height: auto;
+    height: 100vh;
+    transition: opacity 100ms ease-out;
+
 }
 .slide-enter-active, .slide-leave-active
     {
