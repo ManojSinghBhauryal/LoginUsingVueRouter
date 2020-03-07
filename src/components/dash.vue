@@ -1,17 +1,17 @@
 <template>
-<transition name="slide">
     <div class="main">
-            <div v-bind:class="[!toggle ? 'sideNavBar':'navBar']">
-                <button class="findButton">dashboard </button>
-                <div class="navList">
-                    <button class="button">Dashboard</button>
-                    <button class="button">Plugins</button>
-                    <button class="button">Dependencies</button>
-                    <button class="button">Configuration</button>
-                    <button class="button">Tasks</button>
-                </div>
-            </div>
-        <div class="tasks"> 
+    <div class="nav" v-bind:class="{'active': toggle}">
+        <button class="findButton">dashboard</button>
+        <button class="iconClose" v-on:click="toggle = !toggle">&times;</button>
+        <div class="navList">
+            <button class="button">Dashboard</button>
+            <button class="button">Plugins</button>
+            <button class="button">Dependencies</button>
+            <button class="button">Configuration</button>
+            <button class="button">Tasks</button>
+        </div>    
+    </div>
+        <div class="tasks "> 
             <div class="projectTasks">
                 <button class="logout" v-on:click="handleLogout">Logout</button>
                 <button class="icon" v-on:click="toggle = !toggle">&#9776;</button>
@@ -37,8 +37,6 @@
         </div>
     
     </div>
-</transition>
-
 </template>
 
 <script>
@@ -62,7 +60,7 @@ methods:{
 
 <style lang="scss" scoped>
 .main{
-    height:800px;
+    height:auto;
     width:100%;    
     display: flex;
     background-color: white;
@@ -70,30 +68,15 @@ methods:{
 }
 .navBar{
     box-shadow: 1px -2px 4px 0px rgba(68, 92, 74, 0.3);
-    width:250px;
-    z-index:20;
-    height: 100%;
-    transition: all .1s;
-
-    
+    height: 620px;
 }
 .sideNavBar{
     box-shadow: 1px -2px 4px 0px rgba(68, 92, 74, 0.3);
-    width:250px;
     z-index:20;
-    height: 100vh;
-    transition: opacity 100ms ease-out;
+    height: 620px;
+    background-color: white;
+ }
 
-}
-.slide-enter-active, .slide-leave-active
-    {
-        transition: transform 0.2s ease;
-    }
-
-.slide-enter, .slide-leave-to 
-    {
-        transform: all;
-    }
 .findButton{
     text-align: center;
     margin:10px;
@@ -102,7 +85,8 @@ methods:{
     text-align: center;
     padding:10px;
     border-radius:25px;
-    width:80%;
+    width:150px;
+    
 }
 .navList .button{
     border:none;
@@ -113,32 +97,31 @@ methods:{
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    width: inherit;
+    width: -webkit-fill-available;
     display: block;
     outline: none;
 }
 
 .navList .button:hover{
     background-color: #D7F1E6;
-        border:none;
-
+    border:none;
 }
 
 .tasks{
     height:93%;
     width:100%;
-    z-index:5;
 }
 .projectTasks{
-    
     height:65px;
     width:100%;
+    padding-left:5px;
     background-color: #BBE6D6;
     text-align: left;
     display: flex;
     align-items: center;
     font-size: 30px;
     position:relative;
+
 }
 .logout{
     position:absolute;
@@ -158,14 +141,14 @@ methods:{
     width:100%;
     background-color: #C4E7DB;
     display: flex;
+    
 }
 .navBar2{
-    width:330px;
+    width:360px;
     background-color:#E4F5EF;
     border:none;
-
+    
 }
-
 .search{
     width:210px;
     border-radius:25px;
@@ -174,19 +157,28 @@ methods:{
     height:30px;
     outline: none;
     padding-left:10px;
+    display: flex;
 }
-.navList2 .button2{
-  background-color:#E4F5EF;
-  color: black;
-  padding:22px;
-  text-align: left;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  width: 100%;
-  outline: none;
-  border:none;
-
+.navList2{
+    background-color:#E4F5EF;
+    color: black;
+    text-align: left;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border:none;
+}
+.button2{
+    background-color:#E4F5EF;
+    color: black;
+    padding:18px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    border:none;
 }
 
 .nav2text{
@@ -195,6 +187,7 @@ methods:{
 .navList2 .button2:hover{
     background-color: #D7F1E6;
 }
+
 .cards{
     height:100%;
     width:100%;
@@ -207,69 +200,60 @@ methods:{
     left:0px;
     right:0px;
     height:20px;
-    margin-bottom:0px;
-    z-index:20;
-    
 }
 .icon{
     display: none;
+    margin:5px;
+    border:none;
 }
-@media only screen and (max-width: 720px){
-    .main{
-        height:100%;
+.iconClose{
+    font-size: 25px;
+    margin:8px;
+    display: none;
+    float:right;
+    padding:0px 5px 0px 5px;
+    border:none;
+}
+@media only screen and (max-width: 768px){
+    .nav{
+        width: 240px;
+        height: 100vh;
+        position: fixed;
+        transition: transform .5s;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background: white;
+        transform: translateX(-240px);
     }
-    .navBar{
-        width:0;
-        overflow: hidden;
-        cursor:pointer;
-        // display: none;
-    }
-    
-    .findButton{
-        width:230px;
-    }
-    .navList{
-        width:inherit;
-    }
-    
-    .button{
-        display:none;
+    .active {
+        transform: translateX(0);
     }
     .icon{
-        display:block;
-        margin:5px;
+        display: block;    
     }
-    .logout{
-        padding:4px;
+    .iconClose{
         display: block;
     }
-    .search{
-        display: none;
-    }
-       
-    .navBar2{
-        width:100%;
-    }
-    .navList2{
-        display:flex;
-        width: 100%;
-        // padding-left: 15px;
+    .belowTask{
+        display: inline-block;
     }
     .nav2text{
         display: none;
     }
-    .belowTask{
-        flex-direction: column;
+    .search{
+        display: none;
     }
-    .slide-enter-active, .slide-leave-active
-    {
-        transition: transform 0.2s ease;
+    .button2{
+        width:auto;
     }
-
-    .slide-enter, .slide-leave-to 
-    {
-        transform: all;
+    .navBar2{
+    width:auto;
+    display:flex;
+    justify-content: center;
+    align-items: stretch;
+    
     }
-   
+    
 }
 </style>

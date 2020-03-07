@@ -4,7 +4,7 @@
             build
         </div>
         <div class="card1">
-            Dashboard 
+             
         </div> <br>
         <div class="card2">
             <div class="subCard21"></div>
