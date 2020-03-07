@@ -248,12 +248,22 @@ methods:{
         width:auto;
     }
     .navBar2{
-    width:auto;
-    display:flex;
-    justify-content: center;
-    align-items: stretch;
-    
+        width:auto;
+        display:flex;
+        justify-content: center;
+        align-items: stretch; 
     }
-    
+}   
+@media only screen and(max-width:1024){
+    .button2{
+        width:auto;
+    }
+    .navBar2{
+        width:auto;
+        display:flex;
+        justify-content: center;
+        align-items: stretch; 
+    }
 }
+    
 </style>
