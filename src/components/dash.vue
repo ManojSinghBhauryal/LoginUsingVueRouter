@@ -21,10 +21,10 @@
                 <div class="navBar2">
                     <input class="search" />
                     <div class="navList2">
-                        <router-link to="/dash/card1" style="text-decoration:none;"><button class="button2">serve<br><span class="nav2text">Running</span></button></router-link>
-                        <router-link to="/dash/card2" style="text-decoration:none;"><button class="button2">build<br><span class="nav2text">Compiles and minfies</span></button></router-link>
-                        <router-link to="/dash/card3" style="text-decoration:none;"><button class="button2">lint<br><span class="nav2text">Lint and fix files</span></button></router-link>
-                        <router-link to="/dash/card4" style="text-decoration:none;"><button class="button2">inspect<br><span class="nav2text">Inspect the revolved web...</span></button></router-link>
+                        <router-link to="/dash/card1" style="text-decoration:none;"><div class="button2">serve<br><span class="nav2text">Running</span></div></router-link>
+                        <router-link to="/dash/card2" style="text-decoration:none;"><div class="button2">build<br><span class="nav2text">Compiles and minfies</span></div></router-link>
+                        <router-link to="/dash/card3" style="text-decoration:none;"><div class="button2">lint<br><span class="nav2text">Lint and fix files</span></div></router-link>
+                        <router-link to="/dash/card4" style="text-decoration:none;"><div class="button2">inspect<br><span class="nav2text">Inspect the revolved web...</span></div></router-link>
                     </div>
                 </div>
                 <div class="cards"> 
@@ -60,7 +60,7 @@ methods:{
 
 <style lang="scss" scoped>
 .main{
-    height:auto;
+    height:740px;
     width:100%;    
     display: flex;
     background-color: white;
@@ -173,7 +173,7 @@ methods:{
     background-color:#E4F5EF;
     color: black;
     padding:18px;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     font-size: 18px;
     cursor: pointer;
@@ -245,13 +245,17 @@ methods:{
         display: none;
     }
     .button2{
-        width:auto;
+        width:100%;
+        
+    }
+    .navList2{
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
     .navBar2{
-        width:auto;
-        display:flex;
-        justify-content: center;
-        align-items: stretch; 
+        width:100%;
     }
 }   
 @media only screen and(max-width:1024){
@@ -264,6 +268,7 @@ methods:{
         justify-content: center;
         align-items: stretch; 
     }
+    
 }
     
 </style>
