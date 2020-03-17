@@ -173,7 +173,6 @@ methods:{
     background-color:#E4F5EF;
     color: black;
     padding:18px;
-    text-align: center;
     text-decoration: none;
     font-size: 18px;
     cursor: pointer;
