@@ -244,11 +244,11 @@ methods:{
         display: none;
     }
     .button2{
-        width:100%;
+        width:70%;
         
     }
     .navList2{
-        width: 90%;
+        width: 100%;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
