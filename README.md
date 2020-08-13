@@ -2,8 +2,8 @@
 
 
 
-## RoutingInVueJs
+## Routing
 
-## LoginUsingVueRouter
+## Login using VueJs Router
 
 ## Redirects to Dashboard Created using VueJs
